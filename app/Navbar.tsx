@@ -16,7 +16,10 @@ export default function Navbar() {
   const { setSelectedTag, selectedTag } = useFilter();
   const isHomePage = pathname === "/";
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, tag: string | null) => {
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    tag: string | null
+  ) => {
     if (isHomePage) {
       e.preventDefault();
       setSelectedTag(tag);
@@ -69,28 +72,36 @@ export default function Navbar() {
     };
 
     if (menuOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener("mousedown", handleClickOutside);
     }
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [menuOpen]);
 
   return (
-    <nav ref={navRef} className="fixed top-0 left-0 w-full z-50 bg-white border-gray-200 dark:bg-gray-900 shadow" style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>
+    <nav
+      ref={navRef}
+      className="fixed top-0 left-0 w-full z-50 bg-white border-gray-200 dark:bg-gray-900 shadow"
+      style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
+    >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-      <Link 
-        href="/" 
-        className="flex flex-col items-center text-center cursor-pointer"
-        onClick={(e) => {
-          e.preventDefault();
-          setAboutModalOpen(true);
-        }}
-      >
-      <span className="text-2xl font-semibold text-gray-900 uppercase">Imp Manuschanok</span>
-      <span className="text text-gray-500 uppercase">Professional Stylist</span>
-    </Link>
+        <Link
+          href="/"
+          className="flex flex-col items-center text-center cursor-pointer"
+          onClick={(e) => {
+            e.preventDefault();
+            setAboutModalOpen(true);
+          }}
+        >
+          <span className="text-2xl font-semibold text-gray-900 uppercase">
+            Imp Manuschanok
+          </span>
+          <span className="text text-gray-500 uppercase">
+            Professional Stylist
+          </span>
+        </Link>
 
         {/* Hamburger toggle button */}
         <button
@@ -102,7 +113,9 @@ export default function Navbar() {
         >
           <span className="sr-only">Open main menu</span>
           <svg
-            className={`w-5 h-5 transition-transform duration-300 ${menuOpen ? 'rotate-90' : 'rotate-0'}`}
+            className={`w-5 h-5 transition-transform duration-300 ${
+              menuOpen ? "rotate-90" : "rotate-0"
+            }`}
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -121,8 +134,8 @@ export default function Navbar() {
         {/* Menu list */}
         <div
           className={`${
-            menuOpen 
-              ? "max-h-screen opacity-100 translate-y-0" 
+            menuOpen
+              ? "max-h-screen opacity-100 translate-y-0"
               : "max-h-0 opacity-0 -translate-y-4"
           } w-full md:max-h-none md:opacity-100 md:translate-y-0 md:block md:w-auto transition-all duration-300 ease-in-out overflow-hidden`}
           id="navbar-default"
@@ -132,7 +145,11 @@ export default function Navbar() {
               <Link
                 href="/"
                 className={linkClass("/", isHomePage ? "Hightlight" : null)}
-                aria-current={isActive("/", isHomePage ? "Hightlight" : null) ? "page" : undefined}
+                aria-current={
+                  isActive("/", isHomePage ? "Hightlight" : null)
+                    ? "page"
+                    : undefined
+                }
                 onClick={(e) => handleNavClick(e, "Hightlight")}
                 style={{ display: "inline-block", minWidth: "fit-content" }}
               >
@@ -143,7 +160,11 @@ export default function Navbar() {
               <Link
                 href="/"
                 className={linkClass("/", isHomePage ? "Recent_Work" : null)}
-                aria-current={isActive("/", isHomePage ? "Recent_Work" : null) ? "page" : undefined}
+                aria-current={
+                  isActive("/", isHomePage ? "Recent_Work" : null)
+                    ? "page"
+                    : undefined
+                }
                 onClick={(e) => handleNavClick(e, "Recent_Work")}
                 style={{ display: "inline-block", minWidth: "fit-content" }}
               >
@@ -154,7 +175,11 @@ export default function Navbar() {
               <Link
                 href="/"
                 className={linkClass("/", isHomePage ? "Commercials" : null)}
-                aria-current={isActive("/", isHomePage ? "Commercials" : null) ? "page" : undefined}
+                aria-current={
+                  isActive("/", isHomePage ? "Commercials" : null)
+                    ? "page"
+                    : undefined
+                }
                 onClick={(e) => handleNavClick(e, "Commercials")}
                 style={{ display: "inline-block", minWidth: "fit-content" }}
               >
@@ -165,14 +190,17 @@ export default function Navbar() {
               <Link
                 href="/"
                 className={linkClass("/", isHomePage ? "Beauty" : null)}
-                aria-current={isActive("/", isHomePage ? "Beauty" : null) ? "page" : undefined}
+                aria-current={
+                  isActive("/", isHomePage ? "Beauty" : null)
+                    ? "page"
+                    : undefined
+                }
                 onClick={(e) => handleNavClick(e, "Beauty")}
                 style={{ display: "inline-block", minWidth: "fit-content" }}
               >
                 Beauty
               </Link>
             </li>
-           
           </ul>
         </div>
       </div>
@@ -236,7 +264,12 @@ export default function Navbar() {
                 fontSize: "1.1rem",
               }}
             >
-              With over a decade of hands on experience, Imp Manuschanok is a Bangkok based wardrobe stylist known for her thoughtful, detail oriented approach and adaptability across a wide range of creative projects. She has collaborated with respected advertising agencies, directors, and photographers from around the world, bringing a practical yet creative perspective to every production.
+              With over a decade of hands on experience, Imp Manuschanok is a
+              Bangkok based wardrobe stylist known for her thoughtful, detail
+              oriented approach and adaptability across a wide range of creative
+              projects. She has collaborated with respected advertising
+              agencies, directors, and photographers from around the world,
+              bringing a practical yet creative perspective to every production.
             </Typography>
             <Typography
               variant="body1"
@@ -248,7 +281,10 @@ export default function Navbar() {
                 marginTop: 2,
               }}
             >
-              Now working as a freelancer, Imp continues to bring her styling expertise to diverse projects from TV commercials and photo shoots to viral content and beyond, always with a strong sense of collaboration and a commitment to quality.
+              Now working as a freelancer, Imp continues to bring her styling
+              expertise to diverse projects from TV commercials and photo shoots
+              to viral content and beyond, always with a strong sense of
+              collaboration and a commitment to quality.
             </Typography>
           </Box>
         </Fade>
