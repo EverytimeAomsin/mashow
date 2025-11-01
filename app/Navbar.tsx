@@ -95,10 +95,10 @@ export default function Navbar() {
             setAboutModalOpen(true);
           }}
         >
-          <span className="text-2xl font-semibold text-gray-900 uppercase">
+          <span className="text-xl font-semibold text-gray-900 uppercase">
             Imp Manuschanok
           </span>
-          <span className="text text-gray-500 uppercase">
+          <span className="text-sm text-gray-500 uppercase">
             Professional Stylist
           </span>
         </Link>
@@ -153,7 +153,7 @@ export default function Navbar() {
                 onClick={(e) => handleNavClick(e, "Hightlight")}
                 style={{ display: "inline-block", minWidth: "fit-content" }}
               >
-                Highlight
+                Signature Works
               </Link>
             </li>
             <li className="transform transition-all duration-300 ease-in-out">
@@ -221,71 +221,93 @@ export default function Navbar() {
               position: "relative",
               width: "90vw",
               maxWidth: 800,
+              maxHeight: "90vh",
               bgcolor: "white",
               boxShadow: 24,
               borderRadius: 2,
-              padding: 4,
+              border: "1px solid #e0e0e0",
               outline: "none",
+              display: "flex",
+              flexDirection: "column",
+              overflow: "hidden",
             }}
           >
-            {/* Close Button */}
-            <IconButton
-              onClick={() => setAboutModalOpen(false)}
+            {/* Header with Close Button - Fixed */}
+            <Box
               sx={{
-                position: "absolute",
-                top: 8,
-                right: 8,
-                color: "gray",
-                "&:hover": { bgcolor: "rgba(0, 0, 0, 0.05)" },
+                position: "relative",
+                padding: 3,
+                paddingBottom: 0,
+                flexShrink: 0,
               }}
             >
-              <CloseIcon />
-            </IconButton>
+              <IconButton
+                onClick={() => setAboutModalOpen(false)}
+                sx={{
+                  position: "absolute",
+                  top: 8,
+                  right: 8,
+                  color: "gray",
+                  "&:hover": { bgcolor: "rgba(0, 0, 0, 0.05)" },
+                }}
+              >
+                <CloseIcon />
+              </IconButton>
+            </Box>
 
-            {/* Content */}
-            <Typography
-              variant="h4"
-              component="h2"
+            {/* Scrollable Content */}
+            <Box
               sx={{
-                fontFamily: "var(--font-montserrat), sans-serif",
-                fontWeight: 600,
-                marginBottom: 3,
-                color: "#1a1a1a",
+                padding: 4,
+                paddingTop: 0,
+                overflow: "auto",
+                flex: 1,
               }}
             >
-              Imp Manuschanok
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{
-                fontFamily: "var(--font-montserrat), sans-serif",
-                lineHeight: 1.8,
-                color: "#4a4a4a",
-                fontSize: "1.1rem",
-              }}
-            >
-              With over a decade of hands on experience, Imp Manuschanok is a
-              Bangkok based wardrobe stylist known for her thoughtful, detail
-              oriented approach and adaptability across a wide range of creative
-              projects. She has collaborated with respected advertising
-              agencies, directors, and photographers from around the world,
-              bringing a practical yet creative perspective to every production.
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{
-                fontFamily: "var(--font-montserrat), sans-serif",
-                lineHeight: 1.8,
-                color: "#4a4a4a",
-                fontSize: "1.1rem",
-                marginTop: 2,
-              }}
-            >
-              Now working as a freelancer, Imp continues to bring her styling
-              expertise to diverse projects from TV commercials and photo shoots
-              to viral content and beyond, always with a strong sense of
-              collaboration and a commitment to quality.
-            </Typography>
+              <Typography
+                variant="h4"
+                component="h2"
+                sx={{
+                  fontFamily: "var(--font-montserrat), sans-serif",
+                  fontWeight: 600,
+                  marginBottom: 3,
+                  color: "#1a1a1a",
+                }}
+              >
+                Imp Manuschanok
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "var(--font-montserrat), sans-serif",
+                  lineHeight: 1.8,
+                  color: "#4a4a4a",
+                  fontSize: "1.1rem",
+                }}
+              >
+                With over a decade of hands on experience, Imp Manuschanok is a
+                Bangkok based wardrobe stylist known for her thoughtful, detail
+                oriented approach and adaptability across a wide range of creative
+                projects. She has collaborated with respected advertising
+                agencies, directors, and photographers from around the world,
+                bringing a practical yet creative perspective to every production.
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontFamily: "var(--font-montserrat), sans-serif",
+                  lineHeight: 1.8,
+                  color: "#4a4a4a",
+                  fontSize: "1.1rem",
+                  marginTop: 2,
+                }}
+              >
+                Now working as a freelancer, Imp continues to bring her styling
+                expertise to diverse projects from TV commercials and photo shoots
+                to viral content and beyond, always with a strong sense of
+                collaboration and a commitment to quality.
+              </Typography>
+            </Box>
           </Box>
         </Fade>
       </Modal>

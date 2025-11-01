@@ -74,14 +74,14 @@ export default function Footer() {
             sx={{
               textAlign: { xs: "center", sm: "left" },
               ml: { sm: 1 },
-              mt: { xs: 2, sm: 0 },
+              mt: { xs: 0, sm: 0 },
               flexGrow: 1,
               width: { xs: "100%", sm: "auto" },
             }}
           >
             <Link href="tel:+66996356951" underline="hover" color="inherit">
               +66 99 635 6951
-            </Link>{" "}
+            </Link>{" / "}
             <Link
               href="mailto:impmiko@gmail.com"
               underline="hover"

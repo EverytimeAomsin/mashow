@@ -22,7 +22,7 @@ export default function PortfolioPage() {
     },
     {
       img: "/img/CLOSE_UP.jpg",
-      videoUrl: "https://etc1.st-th-1.byteark.com/CLOSE%20UP.mp4",
+      videoUrl: "https://etc1.st-th-1.byteark.com/CLOSE%20UP.mov",
       title: "CLOSE UP",
        tag:"Recent_Work"
     },
@@ -89,19 +89,19 @@ export default function PortfolioPage() {
     {
       img: "/img/L’Oréal_(1).jpg",
       videoUrl: "https://etc1.st-th-1.byteark.com/L%E2%80%99Or%C3%A9al_%281%29.mp4",
-      title: "L'Oréal 1",
+      title: "L'Oréal",
        tag:"Beauty"
     },
     {
       img: "/img/L’Oréal_(2).jpg",
       videoUrl: "https://etc1.st-th-1.byteark.com/L%E2%80%99Or%C3%A9al_%282%29.mp4",
-      title: "L'Oréal 2",
+      title: "L'Oréal",
        tag:"Beauty"
     },
     {
       img: "/img/L’Oréal_(3).jpg",
       videoUrl: "https://etc1.st-th-1.byteark.com/L%E2%80%99Or%C3%A9al_%283%29.mp4",
-      title: "L'Oréal 3",
+      title: "L'Oréal",
        tag:"Beauty"
     },
     {
@@ -258,7 +258,15 @@ export default function PortfolioPage() {
                 <Typography
                   mt={1}
                   ml={2}
-                  sx={{ fontFamily: "var(--font-montserrat), sans-serif" }}
+                  onClick={() => handleOpenModal(item.videoUrl)}
+                  sx={{ 
+                    fontFamily: "var(--font-montserrat), sans-serif",
+                    cursor: "pointer",
+                    "&:hover": { 
+                      color: "primary.main",
+                      textDecoration: "underline"
+                    }
+                  }}
                 >
                   {item.title}
                 </Typography>
