@@ -22,7 +22,7 @@ export default function PortfolioPage() {
     },
     {
       img: "/img/CLOSE_UP.jpg",
-      videoUrl: "https://etc1.st-th-1.byteark.com/CLOSE%20UP.mov",
+      videoUrl: "https://etc1.st-th-1.byteark.com/CLOSE_UP_MP4.mp4",
       title: "CLOSE UP",
        tag:"Recent_Work"
     },
@@ -70,7 +70,7 @@ export default function PortfolioPage() {
     },
     {
       img: "/img/Blue_Band.jpg",
-      videoUrl: "https://etc1.st-th-1.byteark.com/Blue%20Band.mp4",
+      videoUrl: "https://etc1.st-th-1.byteark.com/Blue_Band_MP4.mp4",
       title: "Blue Band",
        tag:"Recent_Work"
     },
